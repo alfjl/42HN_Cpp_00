@@ -25,6 +25,10 @@
 //    std::cout << _darkest_secret << std::endl;
 //}
 
+Contact::Contact() {}
+
+Contact::~Contact() {}
+
 std::string Contact::get_first_name() const
 {
     return this->_first_name;

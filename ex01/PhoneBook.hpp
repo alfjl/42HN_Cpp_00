@@ -4,7 +4,7 @@
 class   PhoneBook
 {
 private:
-    Contact     _contacts[7];
+    Contact     _contacts[8];
     static int  _s_next_contact_nbr;
     static int  _s_max_len;
 

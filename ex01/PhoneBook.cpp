@@ -3,6 +3,13 @@
 #include <string>
 #include "PhoneBook.hpp"
 
+int PhoneBook::_s_next_contact_nbr = 0;
+int PhoneBook::_s_max_len = 0;
+
+PhoneBook::PhoneBook() {}
+
+PhoneBook::~PhoneBook() {}
+
 void    PhoneBook::add_contact()
 {
     std::string  f_name;
@@ -24,13 +31,7 @@ void    PhoneBook::add_contact()
     getline(std::cin, d_secret);
     
     if (_s_next_contact_nbr <= 7)
-    {
-        //if (contacts[contact_nbr]._first_name.empty() == true)
-            //contacts[0] and add new Contact
-        //else
-            //contact[contact_nbr].set_contact_details()
         _contacts[_s_next_contact_nbr].set_contact_details(f_name, l_name, nname, phone, d_secret);
-    }
     else
     {
         _s_next_contact_nbr = 0;
@@ -73,7 +74,7 @@ void    PhoneBook::search_contact() const
                 std::cout << "Wrong input: Digits between 1 and " << _s_next_contact_nbr << " only" << std::endl;
             else
             {
-                display_full_contact(int_input);
+                display_full_contact(int_input - 1);
                 break ;
             }
         }
@@ -87,17 +88,17 @@ int    PhoneBook::display_contacts_preview() const
 
     if (_s_next_contact_nbr == 0)
     {
-        std::cout << "Phone book is empty!" << std::endl;
+        std::cout << "\nPhone book is empty!\n" << std::endl;
         ret_val = 0;
     }
     else
     {
-        for (int i = 0; i < _s_next_contact_nbr - 1; i++)
+        for (int i = 0; i < _s_max_len; i++)
         {
             std::cout << std::setw(10) << i + 1 << "|";
-            std::cout << _contacts[i].get_first_name() << "|";
-            std::cout << _contacts[i].get_last_name() << "|";
-            std::cout << _contacts[i].get_nickname() << std::endl;
+            std::cout << std::setw(10) << _contacts[i].get_first_name() << "|";
+            std::cout << std::setw(10) << _contacts[i].get_last_name() << "|";
+            std::cout << std::setw(10) << _contacts[i].get_nickname() << std::endl;
         }
         ret_val = 1;
     }
