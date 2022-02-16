@@ -52,8 +52,9 @@ void    PhoneBook::search_contact() const
         return;
     while (1)
     {
-        std::cout << "Which contact do you want to display fully?\n"
+        std::cout << "\nWhich contact do you want to display fully?\n"
         "Please type in the corresponding index" << std::endl;
+        std::cout << ">> ";
         getline(std::cin, str_input);
         wrong_input = false;
         for (size_t i = 0; i <= str_input.length(); i++)
@@ -62,7 +63,7 @@ void    PhoneBook::search_contact() const
                 i++;
             else
             {
-                std::cout << "Wrong input: Digits !!!!!!!!!!!!!!!!!!! between 1 and " << _s_next_contact_nbr << " only" << std::endl;
+                std::cout << "\nWrong input: Digits between 1 and " << _s_next_contact_nbr << " only" << std::endl;
                 wrong_input = true;
                 break ;
             }
@@ -71,7 +72,7 @@ void    PhoneBook::search_contact() const
         {
             int_input = std::stoi(str_input);
             if (int_input < 1 || int_input > _s_max_len)
-                std::cout << "Wrong input: Digits between 1 and " << _s_next_contact_nbr << " only" << std::endl;
+                std::cout << "\nWrong input: Digits between 1 and " << _s_next_contact_nbr << " only" << std::endl;
             else
             {
                 display_full_contact(int_input - 1);
@@ -116,9 +117,9 @@ int    PhoneBook::display_contacts_preview() const
 
 void    PhoneBook::display_full_contact(int contact_number) const
 {
-    std::cout << std::setw(14) << "First name: " << _contacts[contact_number].get_first_name() << std::endl;
-    std::cout << std::setw(14) << "Last name: " << _contacts[contact_number].get_last_name() << std::endl;
-    std::cout << std::setw(14) << "Nickname: " << _contacts[contact_number].get_nickname() << std::endl;
-    std::cout << std::setw(14) << "Phone number: " << _contacts[contact_number].get_phone() << std::endl;
-    std::cout << std::setw(14) << "Dark secret: " << _contacts[contact_number].get_darkest_secret() << std::endl;
+    std::cout << std::left << std::setw(14) << "First name: " << _contacts[contact_number].get_first_name() << std::endl;
+    std::cout << std::left << std::setw(14) << "Last name: " << _contacts[contact_number].get_last_name() << std::endl;
+    std::cout << std::left << std::setw(14) << "Nickname: " << _contacts[contact_number].get_nickname() << std::endl;
+    std::cout << std::left << std::setw(14) << "Phone number: " << _contacts[contact_number].get_phone() << std::endl;
+    std::cout << std::left << std::setw(14) << "Dark secret: " << _contacts[contact_number].get_darkest_secret() << std::endl;
 }
