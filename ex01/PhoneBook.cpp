@@ -12,11 +12,12 @@ PhoneBook::~PhoneBook() {}
 
 void    PhoneBook::add_contact()
 {
-    std::string  f_name;
-    std::string  l_name;
-    std::string  nname;
-    std::string  phone;
-    std::string  d_secret;
+    std::string f_name;
+    std::string l_name;
+    std::string nname;
+    std::string phone;
+    std::string d_secret;
+    int         err_flg;
 
     std::cout << "ADD new contact:" << std::endl;
     std::cout << "  First name >> ";
@@ -25,8 +26,25 @@ void    PhoneBook::add_contact()
     getline(std::cin, l_name);
     std::cout << "  Nickname >> ";
     getline(std::cin, nname);
-    std::cout << "  Phone number >> ";
-    getline(std::cin, phone); // check if digits only?????
+    while (true)
+    {
+        err_flg = false;
+        std::cout << "  Phone number >> ";
+        getline(std::cin, phone);
+        for (size_t i = 0; i <= phone.length(); i++)
+        {
+            if (isdigit(phone[i]))
+                i++;
+            else
+            {
+                std::cout << "\n  Wrong input: Digits only" << std::endl;
+                err_flg = true;
+                break ;
+            }
+        }
+        if (err_flg == false)
+            break ;
+    }
     std::cout << "  Darkest secret >> ";
     getline(std::cin, d_secret);
     
