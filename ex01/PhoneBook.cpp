@@ -56,13 +56,13 @@ void    PhoneBook::search_contact() const
         "Please type in the corresponding index" << std::endl;
         getline(std::cin, str_input);
         wrong_input = false;
-        for (size_t i = 0; i < str_input.length(); i++)
+        for (size_t i = 0; i <= str_input.length(); i++)
         {
             if (isdigit(str_input[i]))
                 i++;
             else
             {
-                std::cout << "Wrong input: Digits between 1 and " << _s_next_contact_nbr << " only" << std::endl;
+                std::cout << "Wrong input: Digits !!!!!!!!!!!!!!!!!!! between 1 and " << _s_next_contact_nbr << " only" << std::endl;
                 wrong_input = true;
                 break ;
             }
