@@ -7,16 +7,16 @@ Because of the complexity of the language, the students code has to comply with 
 
 ## Description
 
-ex00:
-Write a short C++ program, that takes a/multiple string/s from the command line and displays them IN ALL CAPS on the standard out.
+ex00:  
+Write a short C++ program, that takes a/multiple string/s from the command line and displays them IN ALL CAPS on the standard out.  
 (first intro to std::cin and std::cout)
 
-ex01:
-Write a program that behaves like a "crappy awesome phonebook software" from the 80s. Functionality is limited to ADD a contact, SEARCH for a contact and EXIT the program.
+ex01:  
+Write a program that behaves like a "crappy awesome phonebook software" from the 80s. Functionality is limited to ADD a contact, SEARCH for a contact and EXIT the program.  
 (first intro to classes)
 
-ex02:
-From the content of tests.cpp and Account.hpp, re-engineer how the 'account class' was implemented and code the Account.cpp yourself.
+ex02:  
+From the content of tests.cpp and Account.hpp, re-engineer how the 'account class' was implemented and code the Account.cpp yourself.  
 (understand the workings of constructors and destructors of C++ classes)
 
 ## Learnings
