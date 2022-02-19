@@ -2,6 +2,7 @@
 #include <string>
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
+#include <ios>
 
 int main()
 {
@@ -17,17 +18,27 @@ int main()
         << "<E> EXIT the program" << std::endl;
         std::cout << ">> ";
         getline(std::cin, input);
-        if (input == "A" || input == "a"
-                    || input == "ADD" || input == "add")
+        if (std::cin.good() == false)
+        {
+            std::cout << "\nError: STRG+D/CMD+D not allowed" << std::endl;
+            break ;
+        }
+        else if (input == "A" || input == "a"
+                || input == "ADD" || input == "add")
             myphonebook.add_contact();
         else if (input == "S" || input == "s"
-                    || input == "SEARCH" || input == "search")
+                || input == "SEARCH" || input == "search")
             myphonebook.search_contact();
         else if (input == "E" || input == "e"
-                    || input == "EXIT" || input == "exit")
+                || input == "EXIT" || input == "exit")
             break ;
         else
             std::cout << "Wrong input: Choose again" << std::endl;
+        if (std::cin.good() == false)
+        {
+            std::cout << "\nError: STRG+D/CMD+D not allowed" << std::endl;
+            break ;
+        }
     }
 
     std::cout << "\n#####   END OF PROGRAM    #####" << std::endl;

@@ -1,30 +1,6 @@
 #include <string>
 #include "Contact.hpp"
 
-
-//Contact::Contact(std::string f_name, std::string l_name, std::string nname,
-//    std::string phone, std::string d_secret)
-//    :   _first_name(f_name), _last_name(l_name), _nickname(nname)
-//    , _phone(phone), _darkest_secret(d_secret)
-//{
-//    // >> has to be deletet after testing
-//    std::cout << this->_first_name << endl;
-//    std::cout << this->_last_name << endl;
-//    std::cout << this->_nicknname << endl;
-//    std::cout << this->_phone << endl;
-//    std::cout << this->_darkest_secret << endl;
-//    // has to be deletet after testing <<
-//}
-
-//void    display_contact() const
-//{
-//    std::cout << _first_name << std::endl;
-//    std::cout << _last_name << std::endl;
-//    std::cout << _nickname << std::endl;
-//    std::cout << _phone << std::endl;
-//    std::cout << _darkest_secret << std::endl;
-//}
-
 Contact::Contact() {}
 
 Contact::~Contact() {}

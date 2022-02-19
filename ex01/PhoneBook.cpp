@@ -22,20 +22,26 @@ void    PhoneBook::add_contact()
     std::cout << "ADD new contact:" << std::endl;
     std::cout << "  First name >> ";
     getline(std::cin, f_name);
+    if (std::cin.good() == false)
+        return ;
     std::cout << "  Last name >> ";
     getline(std::cin, l_name);
+    if (std::cin.good() == false)
+        return ;
     std::cout << "  Nickname >> ";
     getline(std::cin, nname);
+    if (std::cin.good() == false)
+        return ;
     while (true)
     {
         err_flg = false;
         std::cout << "  Phone number >> ";
         getline(std::cin, phone);
-        for (size_t i = 0; i <= phone.length(); i++)
+        if (std::cin.good() == false)
+            return ;
+        for (size_t i = 0; i < phone.length(); i++)
         {
-            if (isdigit(phone[i]))
-                i++;
-            else
+            if (!isdigit(phone[i]))
             {
                 std::cout << "\n  Wrong input: Digits only" << std::endl;
                 err_flg = true;
@@ -47,6 +53,8 @@ void    PhoneBook::add_contact()
     }
     std::cout << "  Darkest secret >> ";
     getline(std::cin, d_secret);
+    if (std::cin.good() == false)
+        return ;
     
     if (_s_next_contact_nbr <= 7)
         _contacts[_s_next_contact_nbr].set_contact_details(f_name, l_name, nname, phone, d_secret);
@@ -74,6 +82,8 @@ void    PhoneBook::search_contact() const
         "Please type in the corresponding index" << std::endl;
         std::cout << ">> ";
         getline(std::cin, str_input);
+        if (std::cin.good() == false)
+            return ;
         wrong_input = false;
         for (size_t i = 0; i <= str_input.length(); i++)
         {
@@ -98,7 +108,6 @@ void    PhoneBook::search_contact() const
             }
         }
     }
-
 }
 
 int    PhoneBook::display_contacts_preview() const

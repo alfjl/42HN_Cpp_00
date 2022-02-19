@@ -14,7 +14,6 @@ public:
     Contact();
     ~Contact();
 
-    // void    display_contact() const; // push into PhoneBook class
     std::string get_first_name() const;
     std::string get_last_name() const;
     std::string get_nickname() const;
