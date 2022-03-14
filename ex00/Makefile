@@ -1,7 +1,7 @@
 NAME = megaphone
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
-SRC = *.cpp
+SRC = megaphone.cpp
 OBJ = $(patsubst %.cpp,%.o,$(SRC))
 
 .PHONY: all debug clean fclean re
